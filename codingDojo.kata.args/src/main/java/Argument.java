@@ -7,9 +7,10 @@ import static com.google.common.collect.Lists.newArrayList;
 class Argument {
   public static final String LOGGING_COMMAND = "l";
   public static final String PORT_COMMAND = "p";
-  public static final String MINUS = "-";
-  public static final String SPACE = " ";
   public static final String DIRECTORY_COMMAND = "d";
+
+  public static final String SEPARATOR_SIGN = " ";
+  public static final String COMMAND_PRECEDED_SIGN = "-";
 
   public static final String DEFAULT_DIRECTORY = "";
   public static final int DEFAULT_PORT = 8080;
@@ -43,11 +44,11 @@ class Argument {
   }
 
   private void splitCommand(String command) {
-    ArrayList<String> commands = newArrayList(command.split(MINUS));
+    ArrayList<String> commands = newArrayList(command.split(COMMAND_PRECEDED_SIGN));
     commands.remove(0);
 
     commands.forEach(cmd -> {
-      ArrayList<String> splitCommand = newArrayList(cmd.split(SPACE));
+      ArrayList<String> splitCommand = newArrayList(cmd.split(SEPARATOR_SIGN));
       arguments.put(splitCommand.get(0), splitCommand.get(splitCommand.size() - 1));
     });
   }
