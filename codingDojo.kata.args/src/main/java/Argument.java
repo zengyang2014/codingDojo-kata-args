@@ -7,11 +7,13 @@ import static com.google.common.collect.Lists.newArrayList;
 class Argument {
   public static final String LOGGING_COMMAND = "l";
   public static final String PORT_COMMAND = "p";
-  public static final int DEFAULT_PORT = 8080;
   public static final String MINUS = "-";
   public static final String SPACE = " ";
   public static final String DIRECTORY_COMMAND = "d";
+
   public static final String DEFAULT_DIRECTORY = "";
+  public static final int DEFAULT_PORT = 8080;
+  public static final boolean DEFAULT_LOGGING = false;
 
   private Map<String, String> arguments = new HashMap<>();
 
@@ -23,7 +25,7 @@ class Argument {
     if (arguments.containsKey(LOGGING_COMMAND)) {
       return true;
     }
-    return false;
+    return DEFAULT_LOGGING;
   }
 
   public int parsePort() {
