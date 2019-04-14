@@ -10,6 +10,8 @@ class Argument {
   public static final int DEFAULT_PORT = 8080;
   public static final String MINUS = "-";
   public static final String SPACE = " ";
+  public static final String DIRECTORY_COMMAND = "d";
+  public static final String DEFAULT_DIRECTORY = "";
 
   private Map<String, String> arguments = new HashMap<>();
 
@@ -29,6 +31,13 @@ class Argument {
       return Integer.valueOf(arguments.get(PORT_COMMAND));
 
     return DEFAULT_PORT;
+  }
+
+  public String parseDirectory() {
+    if (arguments.containsKey(DIRECTORY_COMMAND))
+      return arguments.get(DIRECTORY_COMMAND);
+
+    return DEFAULT_DIRECTORY;
   }
 
   private void splitCommand(String command) {

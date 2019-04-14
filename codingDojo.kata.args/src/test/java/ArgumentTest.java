@@ -45,4 +45,18 @@ public class ArgumentTest {
     assertEquals(90, argumentOne.parsePort());
     assertTrue(argumentOne.parseLogging());
   }
+
+  @Test
+  public void should_parse_directory_character_when_there_is_a_directory_command() {
+    Argument argument = new Argument("-d /usr/logs");
+
+    assertEquals("/usr/logs", argument.parseDirectory());
+  }
+
+  @Test
+  public void should_parse_directory_has_empty_string_as_default_value_when_there_is_no_directory_command() {
+    Argument argument = new Argument("");
+
+    assertEquals("", argument.parseDirectory());
+  }
 }
