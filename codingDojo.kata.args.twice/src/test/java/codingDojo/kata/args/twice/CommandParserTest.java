@@ -1,4 +1,5 @@
-import codingDojo.kata.args.twice.CommandParser;
+package codingDojo.kata.args.twice;
+
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

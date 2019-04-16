@@ -8,6 +8,8 @@ import static com.google.common.collect.Lists.newArrayList;
 
 public class CommandParser {
   public static final String COMMAND_PRECEDED_SIGN = "-";
+  public static final String SCHEMA_PATTERN = "l:boolean,d:string,p:int";
+
   private ArrayList<String> commands;
 
   public CommandParser(String inputText) {
@@ -16,8 +18,8 @@ public class CommandParser {
   }
 
   public List<Argument> getArguments() {
-    return commands.stream().map(command -> {
-      return new Argument(command);
-    }).collect(Collectors.toList());
+    return commands.stream()
+        .map((command) -> new Argument(command, new Schema(SCHEMA_PATTERN)))
+        .collect(Collectors.toList());
   }
 }
