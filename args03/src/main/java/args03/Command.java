@@ -18,4 +18,12 @@ public class Command {
   public String getValueType() {
     return this.valueType;
   }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj instanceof Command) {
+      return ((Command) obj).getName().equals(this.name) && ((Command) obj).getValueType().equals(this.valueType);
+    }
+    return super.equals(obj);
+  }
 }
