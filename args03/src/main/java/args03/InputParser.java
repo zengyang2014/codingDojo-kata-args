@@ -4,17 +4,14 @@ import java.util.List;
 
 import static com.google.common.collect.Lists.newArrayList;
 
-public class InputParser {
-  List<Argument> arguments = newArrayList();
+class InputParser {
 
-  public InputParser(String text) {
-    List<String> splitTexts = newArrayList(text.split("-"));
+  public static List<Argument> parseArguments(String inputText) {
+    List<Argument> arguments = newArrayList();
+    List<String> splitTexts = newArrayList(inputText.split("-"));
     splitTexts.remove(0);
 
-    splitTexts.stream().forEach(splitText -> this.arguments.add(new Argument(splitText)));
-  }
-
-  public List<Argument> parseArguments() {
-    return this.arguments;
+    splitTexts.stream().forEach(splitText -> arguments.add(new Argument(splitText)));
+    return arguments;
   }
 }
