@@ -1,8 +1,8 @@
 package args03;
 
-public class Command {
-  public static final String COMMAND_NAME_AND_TYPE_SEPARATOR = ":";
+import static args03.Constant.Constants.COMMAND_NAME_AND_TYPE_SEPARATOR;
 
+public class Command {
   private String name;
   private String valueType;
 

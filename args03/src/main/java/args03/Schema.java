@@ -3,11 +3,10 @@ package args03;
 import java.util.List;
 import java.util.Optional;
 
+import static args03.Constant.Constants.SCHEMA_PATTERN_SEPARATOR;
 import static com.google.common.collect.Lists.newArrayList;
 
 public class Schema {
-  public static final String SCHEMA_PATTERN_SEPARATOR = ",";
-
   private List<Command> commands = newArrayList();
 
   public Schema(String text) {

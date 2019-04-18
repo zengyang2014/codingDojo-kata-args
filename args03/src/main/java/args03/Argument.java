@@ -1,10 +1,9 @@
 package args03;
 
+import static args03.Constant.Constants.COMMAND_SEPARATOR;
+import static args03.Constant.Constants.SCHEMA_CONTENT;
+
 public class Argument {
-  public static final String COMMAND_SEPARATOR = " ";
-  public static final String SCHEMA_CONTENT = "l:boolean,d:string,p:int";
-
-
   Command command;
   String value;
 
