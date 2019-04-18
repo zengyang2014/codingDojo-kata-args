@@ -9,10 +9,10 @@ public class CommandFlag {
   private String valueType;
 
   public CommandFlag(String pattern) {
-    List<String> splitedPattern = newArrayList(pattern.split(":"));
+    List<String> splitPattern = newArrayList(pattern.split(":"));
 
-    this.name = splitedPattern.get(0);
-    this.valueType = splitedPattern.get(1);
+    this.name = splitPattern.get(0);
+    this.valueType = splitPattern.get(1);
   }
 
   public String getValueType() {
