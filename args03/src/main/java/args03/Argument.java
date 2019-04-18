@@ -1,13 +1,17 @@
 package args03;
 
 public class Argument {
+  public static final String COMMAND_SEPARATOR = " ";
+  public static final String SCHEMA_CONTENT = "l:boolean,d:string,p:int";
+
+
   Command command;
   String value;
 
   public Argument(String text) {
-    String[] splitText = text.split(" ");
+    String[] splitText = text.split(COMMAND_SEPARATOR);
 
-    this.command = new Schema("l:boolean,d:string,p:int").getCommand(splitText[0]).get();
+    this.command = new Schema(SCHEMA_CONTENT).getCommand(splitText[0]).get();
 
     if(splitText.length > 1)
       this.value = splitText[1];

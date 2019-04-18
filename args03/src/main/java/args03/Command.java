@@ -1,11 +1,13 @@
 package args03;
 
 public class Command {
+  public static final String COMMAND_NAME_AND_TYPE_SEPARATOR = ":";
+
   private String name;
   private String valueType;
 
   public Command(String text) {
-    String[] splitText = text.split(":");
+    String[] splitText = text.split(COMMAND_NAME_AND_TYPE_SEPARATOR);
 
     this.name = splitText[0];
     this.valueType = splitText[1];
